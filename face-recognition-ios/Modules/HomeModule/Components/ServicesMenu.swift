@@ -19,7 +19,7 @@ struct ServicesMenu: View {
                 NavigationLink {
                     DetectorCameraView()
                        .navigationTitle("Face Detector")
-                       .toolbarTitleDisplayMode(.inline)
+                       .navigationBarTitleDisplayMode(.inline)
                        .onAppear() {
                            visibility = .hidden
                        }
