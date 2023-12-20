@@ -65,7 +65,7 @@
 		4F9F3F772B3368BA00CE0A16 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F762B3368BA00CE0A16 /* GrowingButton.swift */; };
 		4F9F3F792B3368CC00CE0A16 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F782B3368CC00CE0A16 /* Logo.swift */; };
 		4F9F3F7C2B33692400CE0A16 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */; };
-		4F9F3F7E2B33695E00CE0A16 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7D2B33695E00CE0A16 /* MainViewModel.swift */; };
+		4F9F3F7E2B33695E00CE0A16 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */; };
 		4F9F3F802B3369B500CE0A16 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7F2B3369B500CE0A16 /* CustomerDetailsView.swift */; };
 		4F9F3F832B336ACE00CE0A16 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F822B336ACE00CE0A16 /* CameraViewController.swift */; };
 		4F9F3F852B336AF200CE0A16 /* CameraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F842B336AF200CE0A16 /* CameraViewModel.swift */; };
@@ -73,6 +73,10 @@
 		4F9F3F892B336B3C00CE0A16 /* DetectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F882B336B3C00CE0A16 /* DetectorViewModel.swift */; };
 		4F9F3F8B2B336B8200CE0A16 /* RecognitionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F8A2B336B8200CE0A16 /* RecognitionService.swift */; };
 		4F9F3F8D2B336BAD00CE0A16 /* DetectorResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F8C2B336BAD00CE0A16 /* DetectorResultView.swift */; };
+		4F9F3F8F2B336FE900CE0A16 /* AccountCenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F8E2B336FE900CE0A16 /* AccountCenterViewModel.swift */; };
+		4F9F3F912B33703D00CE0A16 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */; };
+		4F9F3F932B33706200CE0A16 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */; };
+		4F9F3F952B33708C00CE0A16 /* OrganizationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,7 +158,7 @@
 		4F9F3F762B3368BA00CE0A16 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
 		4F9F3F782B3368CC00CE0A16 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
 		4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModel.swift; sourceTree = "<group>"; };
-		4F9F3F7D2B33695E00CE0A16 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F7F2B3369B500CE0A16 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		4F9F3F822B336ACE00CE0A16 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		4F9F3F842B336AF200CE0A16 /* CameraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +166,10 @@
 		4F9F3F882B336B3C00CE0A16 /* DetectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F8A2B336B8200CE0A16 /* RecognitionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionService.swift; sourceTree = "<group>"; };
 		4F9F3F8C2B336BAD00CE0A16 /* DetectorResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectorResultView.swift; sourceTree = "<group>"; };
+		4F9F3F8E2B336FE900CE0A16 /* AccountCenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCenterViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,7 +347,11 @@
 			isa = PBXGroup;
 			children = (
 				4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */,
-				4F9F3F7D2B33695E00CE0A16 /* MainViewModel.swift */,
+				4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */,
+				4F9F3F8E2B336FE900CE0A16 /* AccountCenterViewModel.swift */,
+				4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */,
+				4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */,
+				4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -552,12 +564,13 @@
 				4F9F3F672B3367F100CE0A16 /* SearchBar.swift in Sources */,
 				4F9F3F732B33687D00CE0A16 /* WeeklyReport.swift in Sources */,
 				4F9F3F432B33657400CE0A16 /* CustomerView.swift in Sources */,
+				4F9F3F912B33703D00CE0A16 /* CustomerListViewModel.swift in Sources */,
 				4F9F3F872B336B0A00CE0A16 /* CameraView.swift in Sources */,
 				4F9F3F652B3367DF00CE0A16 /* PersonalInfo.swift in Sources */,
 				4F9F3F792B3368CC00CE0A16 /* Logo.swift in Sources */,
 				4F9F3F3F2B33654400CE0A16 /* BottomNavigationBar.swift in Sources */,
 				4F9F3F752B3368A100CE0A16 /* CircleImage.swift in Sources */,
-				4F9F3F7E2B33695E00CE0A16 /* MainViewModel.swift in Sources */,
+				4F9F3F7E2B33695E00CE0A16 /* UserDetailsViewModel.swift in Sources */,
 				4F9F3F512B3366BC00CE0A16 /* Button.swift in Sources */,
 				4F9F3F412B33656400CE0A16 /* DashboardView.swift in Sources */,
 				4F9F3F852B336AF200CE0A16 /* CameraViewModel.swift in Sources */,
@@ -567,10 +580,12 @@
 				4F9F3F5F2B33676600CE0A16 /* OrganizationDetails.swift in Sources */,
 				4F9F3F5D2B33674A00CE0A16 /* EmployeeList.swift in Sources */,
 				4F9F3F6F2B33685600CE0A16 /* Subtitle.swift in Sources */,
+				4F9F3F932B33706200CE0A16 /* EmployeeListViewModel.swift in Sources */,
 				4F9F3F312B33639600CE0A16 /* JoinOrganizationViewModel.swift in Sources */,
 				4F9F3F6D2B33683600CE0A16 /* SideMenu.swift in Sources */,
 				4F9F3F472B3365BF00CE0A16 /* ProfileView.swift in Sources */,
 				4F9F3F612B3367A000CE0A16 /* OrganizationInfo.swift in Sources */,
+				4F9F3F952B33708C00CE0A16 /* OrganizationDetailsViewModel.swift in Sources */,
 				4F9F3F172B33611400CE0A16 /* ViewModelSignal.swift in Sources */,
 				4F9F3F2F2B33637000CE0A16 /* RegisterViewModel.swift in Sources */,
 				4F9F3F552B3366F100CE0A16 /* CustomerLayout.swift in Sources */,
@@ -599,6 +614,7 @@
 				4F9F3F832B336ACE00CE0A16 /* CameraViewController.swift in Sources */,
 				4F9F3EDF2B335F5F00CE0A16 /* face_recognition_iosApp.swift in Sources */,
 				4F9F3F352B3363E600CE0A16 /* SplashView.swift in Sources */,
+				4F9F3F8F2B336FE900CE0A16 /* AccountCenterViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +781,7 @@
 				DEVELOPMENT_TEAM = SG58GHXW6Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Prove";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -794,6 +811,7 @@
 				DEVELOPMENT_TEAM = SG58GHXW6Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Face Prove";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

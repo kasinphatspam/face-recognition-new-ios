@@ -9,7 +9,7 @@ import SwiftUI
 
 struct OrganizationDetails: View {
     
-    @StateObject var viewModel: OrganizationPasscodeViewModel = OrganizationPasscodeViewModel()
+    @StateObject var viewModel: OrganizationDetailsViewModel = OrganizationDetailsViewModel()
     @State private var organization: Organization? = nil
     
     var body: some View {

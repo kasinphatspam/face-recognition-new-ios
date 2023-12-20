@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserDetails: View {
-    @StateObject var viewModel: HeaderInformationViewModel = HeaderInformationViewModel()
+    @StateObject var viewModel: UserDetailsViewModel = UserDetailsViewModel()
     @State private var user: User? = nil
     
     var body: some View {

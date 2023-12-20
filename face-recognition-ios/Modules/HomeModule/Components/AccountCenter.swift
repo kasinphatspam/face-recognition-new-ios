@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountCenter: View {
     
-    @StateObject var viewModel: InformationViewModel = InformationViewModel()
+    @StateObject var viewModel: AccountCenterViewModel = AccountCenterViewModel()
     @Binding var shouldPopToRootView : Bool
     @State private var isPresentingLogoutConfirm: Bool = false
     @State private var isPresentingDeleteAccountConfirm: Bool = false
