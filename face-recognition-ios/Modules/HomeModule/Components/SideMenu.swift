@@ -7,16 +7,19 @@
 
 import SwiftUI
 
+
 struct SideMenu: View {
     
     @Binding var ignore: Bool
     @Binding var showSideBar: Bool
     @Environment(\.isPresented) var isPresented
+    @Environment(\.openURL) var openURL
     
     var body: some View {
         
         Rectangle()
             .foregroundColor(.black)
+            .ignoresSafeArea()
             .overlay(
                 VStack(alignment: .leading) {
                     HStack {
@@ -40,8 +43,9 @@ struct SideMenu: View {
                                 Text("Subscription").foregroundColor(.white)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
-                            print("hello")
+                            openURL(URL(string: "https://pphamster.com/subscription")!)
                             ignore = true
+                            
                         })
                         .padding(.leading)
                         
@@ -52,6 +56,7 @@ struct SideMenu: View {
                                 Text("Support Center").foregroundColor(.white)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
+                            openURL(URL(string: "https://pphamster.com/contactus")!)
                             ignore = true
                         })
                         .padding(.leading)
@@ -64,6 +69,7 @@ struct SideMenu: View {
                                 Text("FAQ").foregroundColor(.white)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
+                            openURL(URL(string: "https://www.pphamster.com")!)
                             ignore = true
                         })
                         .padding(.leading)
@@ -76,6 +82,7 @@ struct SideMenu: View {
                                 Text("About us").foregroundColor(.white)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
+                            openURL(URL(string: "https://www.pphamster.com")!)
                             ignore = true
                         })
                         .padding(.leading)
