@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct CalendarDate: Hashable {
+    let date: Date
+    let abbreviationMonth: String
+    let abbreviation: String
+}

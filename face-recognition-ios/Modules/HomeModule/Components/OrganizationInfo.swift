@@ -9,7 +9,22 @@ import SwiftUI
 
 struct OrganizationInfo: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Enterprise name: \("-")")
+                .font(.caption)
+                .padding(.leading)
+            
+            Text("Passcode: \("-")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+            
+            Text("Joined since: \( "-")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+        }
+        .padding(.top, 4)
     }
 }
 

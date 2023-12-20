@@ -7,18 +7,80 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LaunchScreen: View {
+    
+    @StateObject var viewModel = LaunchViewModel()
+    @State var isActive: Bool = false
+    @State var isLogin: Bool = false
+    @State var isJoinOrg: Bool = false
+    @State var shouldPopToRootView: Bool = false
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            if self.isActive && !isLogin {
+                // login step
+                NavigationView {
+                    LoginView(isLogin: $isLogin, isJoinOrg: $isJoinOrg)
+                        .preferredColorScheme(.light)
+                }
+            } else if self.isActive && isLogin && !isJoinOrg {
+                // join organization step
+                NavigationView {
+                    JoinOrganizationView(isJoinOrg: $isJoinOrg, isLogin: $isLogin)
+                    .preferredColorScheme(.light)
+                }
+            } else if self.isActive && isLogin && isJoinOrg {
+                // launch main
+                HomeTabView(shouldPopToRootView: $shouldPopToRootView)
+                    .preferredColorScheme(.light)
+            }
+            else {
+                // loading and checking step
+                SplashView()
+                    .preferredColorScheme(.light)
+            }
         }
-        .padding()
+        .onChange(of: shouldPopToRootView, { oldValue, newValue in
+            if newValue == true {
+                isLogin = false
+                isJoinOrg = false
+                isActive = true
+            }
+        })
+        .onAppear {
+            bindViewModel()
+            Task {
+                try await viewModel.getCurrentUser()
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
+        
+    }
+    
+    func bindViewModel() {
+        viewModel.signal.bind { signal in
+             guard let signal = signal else {
+                 return
+             }
+
+             if signal.command == "USER_NOT_FOUND" {
+                 isLogin = false
+                 
+             } else if signal.command == "USER_HAS_NOT_JOINED_ORGANIZATION" {
+                 isLogin = true
+                 isJoinOrg = false
+             } else if signal.command == "USER_HAS_JOINED_ORGANIZATION" {
+                 isLogin = true
+                 isJoinOrg = true
+             }
+         }
     }
 }
 
 #Preview {
-    ContentView()
+    LaunchScreen()
 }

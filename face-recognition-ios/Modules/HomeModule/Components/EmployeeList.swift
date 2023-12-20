@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct EmployeeList: View {
+    
+    @StateObject var viewModel: EmployeeListViewModel = EmployeeListViewModel()
+    @State private var users: [User]? = []
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if users != nil {
+                ForEach(users!) { user in
+                    EmployeeLayout(user: user)
+                }
+            }
+            
+        }
+        .onAppear() {
+            bindViewModel()
+            Task {
+                try await viewModel.fetch()
+            }
+        }
+    }
+    
+    func bindViewModel() {
+        viewModel.users.bind { users in
+            self.users = users
+         }
     }
 }
 
 #Preview {
     EmployeeList()
 }
+

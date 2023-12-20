@@ -7,12 +7,21 @@
 
 import SwiftUI
 
-struct GrowingButton: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct GrowingButton: ButtonStyle {
+    
+    private let color: Color
+    
+    init(color: Color) {
+        self.color = color
+    }
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .padding()
+            .background(self.color)
+            .cornerRadius(6)
+            .foregroundStyle(.white)
+            .scaleEffect(configuration.isPressed ? 1.2 : 1)
+            .animation(.easeOut(duration: 0.2), value: configuration.isPressed)
     }
 }
 
-#Preview {
-    GrowingButton()
-}

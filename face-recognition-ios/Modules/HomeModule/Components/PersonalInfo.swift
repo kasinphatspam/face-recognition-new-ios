@@ -9,10 +9,31 @@ import SwiftUI
 
 struct PersonalInfo: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Email: \("-")")
+                .font(.caption)
+                .padding(.leading)
+            
+            Text("Personal ID: \("-")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+            
+            Text("Date of birth: \( "-")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+            
+            Text("Gender: \( "-")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+        }
+        .padding(.top, 4)
     }
 }
 
 #Preview {
     PersonalInfo()
 }
+

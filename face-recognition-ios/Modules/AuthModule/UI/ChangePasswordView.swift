@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct ChangePasswordView: View {
+    
+    @State var oldPassword = ""
+    @State var newPassword = ""
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            Form {
+            
+                Section(header: Text("Security")) {
+                    SecureField("Old password", text: $oldPassword)
+                    SecureField("New password", text: $newPassword)
+                    SecureField("Confirm new password", text: $newPassword)
+                }
+                
+                Button("Continue") {
+                    
+                }
+                
+                Button(action: {
+                    
+                }) {
+                    Text("Discard")
+                        .foregroundColor(.red)
+                }
+            }
+        }
     }
 }
 

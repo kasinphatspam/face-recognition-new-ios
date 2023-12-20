@@ -7,12 +7,17 @@
 
 import SwiftUI
 
-struct Logo: View {
+struct LogoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack(spacing: 4) {
+            Image(uiImage: UIImage(named: "icon")!)
+                .resizable()
+                .frame(width: 60, height: 60)
+        }
     }
 }
 
 #Preview {
-    Logo()
+    LogoView()
 }
+

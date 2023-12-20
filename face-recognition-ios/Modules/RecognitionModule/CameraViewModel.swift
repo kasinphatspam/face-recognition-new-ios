@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class CameraViewModel: ObservableObject {
+    
+    var status: Observable<Bool> = Observable(false)
+    
+    func toggle() {
+        self.status.value = true
+    }
+    
+    func reset() {
+        self.status.value = false
+    }
+}

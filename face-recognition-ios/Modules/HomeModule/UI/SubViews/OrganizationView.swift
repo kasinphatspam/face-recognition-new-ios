@@ -8,11 +8,46 @@
 import SwiftUI
 
 struct OrganizationView: View {
+    
+    @Binding var visibility: Visibility
+    @Binding var showSideBar: Bool
+        
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(showsIndicators: false) {
+            VStack {
+                SearchBar()
+                Subtitle(title: "Organization Details")
+                OrganizationDetails()
+                Subtitle(title: "Employees")
+                EmployeeList()
+                Spacer()
+            }
+        }
+        .navigationTitle("Organization").navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    withAnimation {
+                        showSideBar.toggle()
+                    }
+                } label: {
+                    Image(uiImage: UIImage(named: "menu")!).padding(.leading, 8)
+                }
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    
+                } label: {
+                    Image(uiImage: UIImage(named: "setting")!).padding(.trailing, 8)
+                }
+            }
+        }
+        .toolbar(visibility, for: .tabBar)
     }
 }
 
 #Preview {
-    OrganizationView()
+    OrganizationView(visibility: .constant(.visible), showSideBar: .constant(false))
 }
+

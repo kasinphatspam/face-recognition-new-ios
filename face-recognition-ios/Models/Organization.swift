@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Enterprise: Codable {
+struct Organization: Codable {
     let id: Int
     let name: String
     let passcode: String

@@ -8,11 +8,28 @@
 import SwiftUI
 
 struct Subtitle: View {
+    
+    @State private var title: String
+    
+    init(title: String) {
+        self.title = title
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text(self.title)
+                .font(.caption)
+                .foregroundColor(.dynamicblack)
+                .bold()
+                .padding(.top, 16)
+                .padding(.leading, 16)
+            Spacer()
+        }
+        .padding(.top, 8)
     }
 }
 
 #Preview {
-    Subtitle()
+    Subtitle(title: "Title")
 }
+
