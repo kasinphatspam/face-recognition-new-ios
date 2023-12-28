@@ -31,7 +31,7 @@ struct BottomNavigationBar: View {
             .tag(1)
             
             NavigationView {
-                OrganizationView(visibility: $visibility, showSideBar: $showSideBar)
+                OrganizationView(visibility: $visibility, showSideBar: $showSideBar, shouldPopToRootView: $shouldPopToRootView)
             }
             .tabItem {
                 Image(uiImage: UIImage(named: "enterprise")!)

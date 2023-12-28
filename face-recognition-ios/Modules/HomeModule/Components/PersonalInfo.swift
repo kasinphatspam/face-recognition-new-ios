@@ -8,28 +8,35 @@
 import SwiftUI
 
 struct PersonalInfo: View {
+    
+    @StateObject private var viewModel: PersonalInfoViewModel = PersonalInfoViewModel()
+    @State private var user: User? = nil
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Email: \("-")")
+            Text("Email: \(user?.email ?? "")")
                 .font(.caption)
                 .padding(.leading)
             
-            Text("Personal ID: \("-")")
-                .font(.caption)
-                .padding(.leading)
-                .padding(.top,2)
-            
-            Text("Date of birth: \( "-")")
+            Text("Personal ID: \(user?.personalId ?? "")")
                 .font(.caption)
                 .padding(.leading)
                 .padding(.top,2)
             
-            Text("Gender: \( "-")")
+            Text("Date of birth: \(user?.dob ?? "Not specified")")
+                .font(.caption)
+                .padding(.leading)
+                .padding(.top,2)
+            
+            Text("Gender: \(user?.gender ?? "Not specified")")
                 .font(.caption)
                 .padding(.leading)
                 .padding(.top,2)
         }
         .padding(.top, 4)
+        .onAppear() {
+            user = viewModel.fetch()
+        }
     }
 }
 

@@ -26,6 +26,8 @@ struct ServicesMenu: View {
                        .onDisappear() {
                            visibility = .visible
                        }
+                       .toolbarRole(.editor)
+
                } label: {
                    HStack {
                        Image(systemName: "faceid").resizable().frame(width: 20, height: 20)

@@ -11,7 +11,7 @@ struct HomeTabView: View {
     
     @Binding var shouldPopToRootView : Bool
     @State private var showSideBar = false
-    @State private var ignoreHideSideBar = false
+    @State private var clickable = true
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -20,9 +20,10 @@ struct HomeTabView: View {
                 .zIndex(0)
                 .overlay(
                     BottomNavigationBar(showSideBar: $showSideBar, shouldPopToRootView: $shouldPopToRootView)
-                )
+                ).allowsHitTesting(clickable)
+            
             if self.showSideBar == true {
-                SideMenu(ignore: $ignoreHideSideBar, showSideBar: $showSideBar)
+                SideMenu(clickable: $clickable, showSideBar: $showSideBar)
                     .transition(.move(edge: .leading))
                     .zIndex(1)
             }

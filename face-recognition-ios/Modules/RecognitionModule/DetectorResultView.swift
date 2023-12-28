@@ -27,7 +27,7 @@ struct DetectionResultSheet: View {
                         Text("\(contact!.firstname) \(contact!.lastname)")
                             .font(.headline)
                             .bold()
-                        Text(contact!.company ?? "").font(.subheadline)
+                        Text(contact!.company ?? "Free").font(.subheadline)
                     }.padding(.leading)
                     Spacer()
                 }

@@ -18,6 +18,8 @@ struct CustomerLayout: View {
     var body: some View {
         NavigationLink {
             CustomerDetailView(contact: contact)
+                .toolbarRole(.editor)
+
         } label: {
             HStack {
                 

@@ -1,10 +1,3 @@
-//
-//  RecognitionService.swift
-//  face-recognition-ios
-//
-//  Created by Kasinphat Ketchom on 21/12/2566 BE.
-//
-
 import Foundation
 
 struct EncoderResponse: Codable {
@@ -17,80 +10,60 @@ struct RecognitionResponse: Codable {
     let result: [Contact]?
 }
 
-class RecognitionService: Connection{
+class RecognitionService {
     
-    // response object
-    private var encoderResponse: EncoderResponse? = nil
-    private var recognitionResponse: RecognitionResponse? = nil
+    private let connectionHelper = ConnectionHelper()
     
-    func trains(contactId: Int, image: String, completion: @escaping ((Error?, Bool, EncoderResponse?) -> Void))
-    async throws {
-        
-        if GlobalVariables.user == nil {
+    // MARK: - Public Methods
+    
+    func train(contactId: Int, image: String, completion: @escaping (Error?, Bool, EncoderResponse?) -> Void) async throws {
+        guard let user = GlobalVariables.user, let organization = user.organization else {
             return
         }
         
-        if GlobalVariables.user?.organization == nil {
-            return
-        }
+        let body = ["image": image]
         
-        let body = [
-            "image": image,
-        ]
-        
-        try await puts(
-            from: "\(EnviromentVariable.protocal)://\(EnviromentVariable.ip)/organization/\(GlobalVariables.user!.organization!)/contact/\(contactId)/encode",
-            parameter: body,
-            header: ["session": GlobalVariables.session]) {
-                error, success, data in
-                guard let data = data, error == nil else {
-                    completion(error, false, nil)
-                    return
-                }
-                
-                guard let decoded = try? JSONDecoder().decode(EncoderResponse.self, from: data) else {
-                    print("RecognitionService: Error decode failure \(String(decoding: data, as: UTF8.self))")
-                    completion(JSONDecoderError.decodeFailure, false, nil)
-                    return
-                }
-                print("RecognitionService: Encode new faces of contact id: \(contactId)")
-                completion(nil, true, decoded)
+        let connection = Connection(url: connectionHelper.train(id: contactId))
+        try await connection.put(body: body, headers: ["session": GlobalVariables.session]) { error, success, data in
+            guard let data = data, error == nil else {
+                completion(error, false, nil)
+                return
             }
+            
+            guard let decoded = try? JSONDecoder().decode(EncoderResponse.self, from: data) else {
+                print("RecognitionService: Error decode failure \(String(decoding: data, as: UTF8.self))")
+                completion(JSONDecoderError.decodeFailure, false, nil)
+                return
+            }
+            
+            print("RecognitionService: Encode new faces of contact id: \(contactId)")
+            completion(nil, true, decoded)
+        }
     }
-    func recognize(image: String, completion: @escaping ((Error?, Bool, RecognitionResponse?) -> Void))
-    async throws {
-        
-        if GlobalVariables.user == nil {
+
+    func recognize(image: String, completion: @escaping (Error?, Bool, RecognitionResponse?) -> Void) async throws {
+        guard let user = GlobalVariables.user, let organization = user.organization else {
             return
         }
         
-        if GlobalVariables.user?.organization == nil {
-            return
-        }
-        
-        let body = [
-            "image": image,
-        ]
-        try await posts(
-            from: "\(EnviromentVariable.protocal)://\(EnviromentVariable.ip)/organization/\(GlobalVariables.user!.organization!.id)/contact/encode/recognition",
-            parameter: body,
-            header: ["session": GlobalVariables.session]) {
-                error, success, data in
-                guard let data = data, error == nil else {
-                    completion(error, false, nil)
-                    return
-                }
-                
-                guard let decoded = try? JSONDecoder().decode(RecognitionResponse.self, from: data) else {
-                    print("RecognitionService: Error decode failure \(String(decoding: data, as: UTF8.self))")
-                    completion(JSONDecoderError.decodeFailure, false, nil)
-                    return
-                }
-                
-                if decoded.accuracy == nil && decoded.statusCode == 500 && decoded.result == nil {
-                    completion(error, false, nil)
-                }
-                completion(nil, true, decoded)
+        let body = ["image": image]
+        let connection = Connection(url: connectionHelper.recognize())
+        try await connection.post(body: body, headers: ["session": GlobalVariables.session]) { error, success, data in
+            guard let data = data, error == nil else {
+                completion(error, false, nil)
+                return
             }
+            
+            guard let decoded = try? JSONDecoder().decode(RecognitionResponse.self, from: data) else {
+                print("RecognitionService: Error decode failure \(String(decoding: data, as: UTF8.self))")
+                completion(JSONDecoderError.decodeFailure, false, nil)
+                return
+            }
+            
+            if decoded.accuracy == nil && decoded.statusCode == 500 && decoded.result == nil {
+                completion(error, false, nil)
+            }
+            completion(nil, true, decoded)
+        }
     }
 }

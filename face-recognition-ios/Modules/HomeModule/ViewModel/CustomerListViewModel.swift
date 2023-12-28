@@ -10,6 +10,7 @@ import Foundation
 class CustomerListViewModel: ObservableObject {
     
     private let organizationService: OrganizationService = OrganizationService()
+    
     var contacts: Observable<[Contact]> = Observable(nil)
     
     func fetch() async throws {

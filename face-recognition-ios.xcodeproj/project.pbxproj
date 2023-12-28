@@ -64,7 +64,7 @@
 		4F9F3F752B3368A100CE0A16 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F742B3368A100CE0A16 /* CircleImage.swift */; };
 		4F9F3F772B3368BA00CE0A16 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F762B3368BA00CE0A16 /* GrowingButton.swift */; };
 		4F9F3F792B3368CC00CE0A16 /* Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F782B3368CC00CE0A16 /* Logo.swift */; };
-		4F9F3F7C2B33692400CE0A16 /* CustomerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */; };
+		4F9F3F7C2B33692400CE0A16 /* AddCustomerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7B2B33692400CE0A16 /* AddCustomerViewModel.swift */; };
 		4F9F3F7E2B33695E00CE0A16 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */; };
 		4F9F3F802B3369B500CE0A16 /* CustomerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F7F2B3369B500CE0A16 /* CustomerDetailsView.swift */; };
 		4F9F3F832B336ACE00CE0A16 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F822B336ACE00CE0A16 /* CameraViewController.swift */; };
@@ -77,6 +77,16 @@
 		4F9F3F912B33703D00CE0A16 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */; };
 		4F9F3F932B33706200CE0A16 /* EmployeeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */; };
 		4F9F3F952B33708C00CE0A16 /* OrganizationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */; };
+		4F9F3F972B34644700CE0A16 /* NotifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F962B34644700CE0A16 /* NotifyView.swift */; };
+		4F9F3F992B34685B00CE0A16 /* NotifyLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F982B34685B00CE0A16 /* NotifyLayout.swift */; };
+		4F9F3F9B2B34CF2900CE0A16 /* NotifyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F9A2B34CF2900CE0A16 /* NotifyViewModel.swift */; };
+		4F9F3F9D2B34CFC000CE0A16 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F9C2B34CFC000CE0A16 /* Notification.swift */; };
+		4F9F3F9F2B34D89F00CE0A16 /* ManageOrganizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3F9E2B34D89F00CE0A16 /* ManageOrganizationView.swift */; };
+		4F9F3FA12B34D90000CE0A16 /* AddCustomerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3FA02B34D90000CE0A16 /* AddCustomerView.swift */; };
+		4F9F3FA32B35B29600CE0A16 /* PersonalInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9F3FA22B35B29600CE0A16 /* PersonalInfoViewModel.swift */; };
+		4FC45FEB2B3B012400C3D2B6 /* ManageOrganizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC45FEA2B3B012400C3D2B6 /* ManageOrganizationViewModel.swift */; };
+		4FC45FED2B3B0CA500C3D2B6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC45FEC2B3B0CA500C3D2B6 /* UserService.swift */; };
+		4FC45FF12B3E2BA200C3D2B6 /* ConnectionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC45FF02B3E2BA200C3D2B6 /* ConnectionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,7 +167,7 @@
 		4F9F3F742B3368A100CE0A16 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		4F9F3F762B3368BA00CE0A16 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
 		4F9F3F782B3368CC00CE0A16 /* Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logo.swift; sourceTree = "<group>"; };
-		4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F7B2B33692400CE0A16 /* AddCustomerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F7F2B3369B500CE0A16 /* CustomerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDetailsView.swift; sourceTree = "<group>"; };
 		4F9F3F822B336ACE00CE0A16 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +180,16 @@
 		4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewModel.swift; sourceTree = "<group>"; };
 		4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrganizationDetailsViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F962B34644700CE0A16 /* NotifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyView.swift; sourceTree = "<group>"; };
+		4F9F3F982B34685B00CE0A16 /* NotifyLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyLayout.swift; sourceTree = "<group>"; };
+		4F9F3F9A2B34CF2900CE0A16 /* NotifyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifyViewModel.swift; sourceTree = "<group>"; };
+		4F9F3F9C2B34CFC000CE0A16 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		4F9F3F9E2B34D89F00CE0A16 /* ManageOrganizationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageOrganizationView.swift; sourceTree = "<group>"; };
+		4F9F3FA02B34D90000CE0A16 /* AddCustomerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCustomerView.swift; sourceTree = "<group>"; };
+		4F9F3FA22B35B29600CE0A16 /* PersonalInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewModel.swift; sourceTree = "<group>"; };
+		4FC45FEA2B3B012400C3D2B6 /* ManageOrganizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageOrganizationViewModel.swift; sourceTree = "<group>"; };
+		4FC45FEC2B3B0CA500C3D2B6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		4FC45FF02B3E2BA200C3D2B6 /* ConnectionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,7 +337,7 @@
 				4F9F3F142B3360A900CE0A16 /* Organization.swift */,
 				4F9F3F162B33611400CE0A16 /* ViewModelSignal.swift */,
 				4F9F3F182B33613200CE0A16 /* CalendarDate.swift */,
-				4F9F3F1B2B33615900CE0A16 /* AuthService.swift */,
+				4F9F3F9C2B34CFC000CE0A16 /* Notification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +347,8 @@
 			children = (
 				4F9F3F1D2B33618700CE0A16 /* OrganizationService.swift */,
 				4F9F3F8A2B336B8200CE0A16 /* RecognitionService.swift */,
+				4F9F3F1B2B33615900CE0A16 /* AuthService.swift */,
+				4FC45FEC2B3B0CA500C3D2B6 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -339,6 +361,7 @@
 				4F9F3F242B33624200CE0A16 /* EnviromentVariables.swift */,
 				4F9F3F262B33626100CE0A16 /* KeychainHelper.swift */,
 				4F9F3F282B33627D00CE0A16 /* Observable.swift */,
+				4FC45FF02B3E2BA200C3D2B6 /* ConnectionHelper.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -346,12 +369,15 @@
 		4F9F3F362B33642C00CE0A16 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				4F9F3F7B2B33692400CE0A16 /* CustomerDetailsViewModel.swift */,
+				4F9F3F7B2B33692400CE0A16 /* AddCustomerViewModel.swift */,
 				4F9F3F7D2B33695E00CE0A16 /* UserDetailsViewModel.swift */,
 				4F9F3F8E2B336FE900CE0A16 /* AccountCenterViewModel.swift */,
 				4F9F3F902B33703D00CE0A16 /* CustomerListViewModel.swift */,
 				4F9F3F922B33706200CE0A16 /* EmployeeListViewModel.swift */,
 				4F9F3F942B33708C00CE0A16 /* OrganizationDetailsViewModel.swift */,
+				4F9F3F9A2B34CF2900CE0A16 /* NotifyViewModel.swift */,
+				4F9F3FA22B35B29600CE0A16 /* PersonalInfoViewModel.swift */,
+				4FC45FEA2B3B012400C3D2B6 /* ManageOrganizationViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,6 +417,7 @@
 				4F9F3F742B3368A100CE0A16 /* CircleImage.swift */,
 				4F9F3F762B3368BA00CE0A16 /* GrowingButton.swift */,
 				4F9F3F782B3368CC00CE0A16 /* Logo.swift */,
+				4F9F3F982B34685B00CE0A16 /* NotifyLayout.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -398,12 +425,15 @@
 		4F9F3F3B2B3364DA00CE0A16 /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				4F9F3F962B34644700CE0A16 /* NotifyView.swift */,
 				4F9F3F402B33656400CE0A16 /* DashboardView.swift */,
 				4F9F3F422B33657400CE0A16 /* CustomerView.swift */,
 				4F9F3F442B33659400CE0A16 /* OrganizationView.swift */,
 				4F9F3F462B3365BF00CE0A16 /* ProfileView.swift */,
 				4F9F3F482B33663000CE0A16 /* SearchView.swift */,
 				4F9F3F7F2B3369B500CE0A16 /* CustomerDetailsView.swift */,
+				4F9F3F9E2B34D89F00CE0A16 /* ManageOrganizationView.swift */,
+				4F9F3FA02B34D90000CE0A16 /* AddCustomerView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -560,13 +590,16 @@
 				4F9F3F102B33602F00CE0A16 /* LoginViewModel.swift in Sources */,
 				4F9F3F572B33670700CE0A16 /* CustomerList.swift in Sources */,
 				4F9F3F3A2B3364B400CE0A16 /* HomeTabView.swift in Sources */,
+				4F9F3F9F2B34D89F00CE0A16 /* ManageOrganizationView.swift in Sources */,
 				4F9F3F8D2B336BAD00CE0A16 /* DetectorResultView.swift in Sources */,
 				4F9F3F672B3367F100CE0A16 /* SearchBar.swift in Sources */,
 				4F9F3F732B33687D00CE0A16 /* WeeklyReport.swift in Sources */,
+				4FC45FED2B3B0CA500C3D2B6 /* UserService.swift in Sources */,
 				4F9F3F432B33657400CE0A16 /* CustomerView.swift in Sources */,
 				4F9F3F912B33703D00CE0A16 /* CustomerListViewModel.swift in Sources */,
 				4F9F3F872B336B0A00CE0A16 /* CameraView.swift in Sources */,
 				4F9F3F652B3367DF00CE0A16 /* PersonalInfo.swift in Sources */,
+				4FC45FF12B3E2BA200C3D2B6 /* ConnectionHelper.swift in Sources */,
 				4F9F3F792B3368CC00CE0A16 /* Logo.swift in Sources */,
 				4F9F3F3F2B33654400CE0A16 /* BottomNavigationBar.swift in Sources */,
 				4F9F3F752B3368A100CE0A16 /* CircleImage.swift in Sources */,
@@ -576,13 +609,17 @@
 				4F9F3F852B336AF200CE0A16 /* CameraViewModel.swift in Sources */,
 				4F9F3F0C2B335FD300CE0A16 /* LoginView.swift in Sources */,
 				4F9F3F712B33686600CE0A16 /* UserDetails.swift in Sources */,
+				4F9F3F9D2B34CFC000CE0A16 /* Notification.swift in Sources */,
+				4F9F3F992B34685B00CE0A16 /* NotifyLayout.swift in Sources */,
 				4F9F3F452B33659400CE0A16 /* OrganizationView.swift in Sources */,
 				4F9F3F5F2B33676600CE0A16 /* OrganizationDetails.swift in Sources */,
+				4F9F3F9B2B34CF2900CE0A16 /* NotifyViewModel.swift in Sources */,
 				4F9F3F5D2B33674A00CE0A16 /* EmployeeList.swift in Sources */,
 				4F9F3F6F2B33685600CE0A16 /* Subtitle.swift in Sources */,
 				4F9F3F932B33706200CE0A16 /* EmployeeListViewModel.swift in Sources */,
 				4F9F3F312B33639600CE0A16 /* JoinOrganizationViewModel.swift in Sources */,
 				4F9F3F6D2B33683600CE0A16 /* SideMenu.swift in Sources */,
+				4F9F3F972B34644700CE0A16 /* NotifyView.swift in Sources */,
 				4F9F3F472B3365BF00CE0A16 /* ProfileView.swift in Sources */,
 				4F9F3F612B3367A000CE0A16 /* OrganizationInfo.swift in Sources */,
 				4F9F3F952B33708C00CE0A16 /* OrganizationDetailsViewModel.swift in Sources */,
@@ -595,12 +632,13 @@
 				4F9F3F1C2B33615900CE0A16 /* AuthService.swift in Sources */,
 				4F9F3F772B3368BA00CE0A16 /* GrowingButton.swift in Sources */,
 				4F9F3EE12B335F5F00CE0A16 /* LaunchScreen.swift in Sources */,
+				4F9F3FA32B35B29600CE0A16 /* PersonalInfoViewModel.swift in Sources */,
 				4F9F3F8B2B336B8200CE0A16 /* RecognitionService.swift in Sources */,
 				4F9F3F4D2B33667F00CE0A16 /* ChangePasswordView.swift in Sources */,
 				4F9F3F5B2B33673300CE0A16 /* EmployeeLayout.swift in Sources */,
 				4F9F3F802B3369B500CE0A16 /* CustomerDetailsView.swift in Sources */,
 				4F9F3F332B3363C200CE0A16 /* JoinOrganizationView.swift in Sources */,
-				4F9F3F7C2B33692400CE0A16 /* CustomerDetailsViewModel.swift in Sources */,
+				4F9F3F7C2B33692400CE0A16 /* AddCustomerViewModel.swift in Sources */,
 				4F9F3F232B33622A00CE0A16 /* Connection.swift in Sources */,
 				4F9F3F632B3367BE00CE0A16 /* Line.swift in Sources */,
 				4F9F3F692B33680300CE0A16 /* ServicesMenu.swift in Sources */,
@@ -611,8 +649,10 @@
 				4F9F3F892B336B3C00CE0A16 /* DetectorViewModel.swift in Sources */,
 				4F9F3F152B3360A900CE0A16 /* Organization.swift in Sources */,
 				4F9F3F532B3366D600CE0A16 /* Calendar.swift in Sources */,
+				4FC45FEB2B3B012400C3D2B6 /* ManageOrganizationViewModel.swift in Sources */,
 				4F9F3F832B336ACE00CE0A16 /* CameraViewController.swift in Sources */,
 				4F9F3EDF2B335F5F00CE0A16 /* face_recognition_iosApp.swift in Sources */,
+				4F9F3FA12B34D90000CE0A16 /* AddCustomerView.swift in Sources */,
 				4F9F3F352B3363E600CE0A16 /* SplashView.swift in Sources */,
 				4F9F3F8F2B336FE900CE0A16 /* AccountCenterViewModel.swift in Sources */,
 			);
@@ -708,6 +748,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -764,6 +805,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;

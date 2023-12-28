@@ -11,6 +11,11 @@ struct Organization: Codable {
     let id: Int
     let name: String
     let passcode: String
+    let codeCreatedTime: String?
+    let packageKey: String?
+    let plan: Plan?
+    let employeeCount: Int?
+    let contactCount: Int?
 }
 
 struct Role: Codable {
@@ -37,5 +42,14 @@ struct Contact: Codable, Identifiable {
     let linkedin: String?
     let encodedId: String?
     let image: String?
+}
+
+struct Plan: Codable {
+    let id: Int
+    let title: String
+    let cost: Float
+    let limitEmployee: Int
+    let limitContact: Int
+    let features: String?
 }
 

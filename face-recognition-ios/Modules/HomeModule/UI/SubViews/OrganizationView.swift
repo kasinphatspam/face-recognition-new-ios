@@ -11,6 +11,7 @@ struct OrganizationView: View {
     
     @Binding var visibility: Visibility
     @Binding var showSideBar: Bool
+    @Binding var shouldPopToRootView: Bool
         
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -36,8 +37,8 @@ struct OrganizationView: View {
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    
+                NavigationLink {
+                    ManageOrganizationView(shouldPopToRootView: $shouldPopToRootView).toolbarRole(.editor)
                 } label: {
                     Image(uiImage: UIImage(named: "setting")!).padding(.trailing, 8)
                 }
@@ -48,6 +49,6 @@ struct OrganizationView: View {
 }
 
 #Preview {
-    OrganizationView(visibility: .constant(.visible), showSideBar: .constant(false))
+    OrganizationView(visibility: .constant(.visible), showSideBar: .constant(false), shouldPopToRootView: .constant(false))
 }
 

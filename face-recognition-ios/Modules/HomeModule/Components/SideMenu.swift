@@ -10,7 +10,7 @@ import SwiftUI
 
 struct SideMenu: View {
     
-    @Binding var ignore: Bool
+    @Binding var clickable: Bool
     @Binding var showSideBar: Bool
     @Environment(\.isPresented) var isPresented
     @Environment(\.openURL) var openURL
@@ -18,7 +18,7 @@ struct SideMenu: View {
     var body: some View {
         
         Rectangle()
-            .foregroundColor(.black)
+            .foregroundColor(.black.opacity(1))
             .ignoresSafeArea()
             .overlay(
                 VStack(alignment: .leading) {
@@ -26,6 +26,7 @@ struct SideMenu: View {
                         Spacer()
                         Button(action: {
                             showSideBar = false
+                            clickable = true
                         }, label: {
                             Image(systemName: "xmark").foregroundColor(.white)
                                 .padding(.top)
@@ -44,7 +45,7 @@ struct SideMenu: View {
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             openURL(URL(string: "https://pphamster.com/subscription")!)
-                            ignore = true
+                            clickable = true
                             
                         })
                         .padding(.leading)
@@ -57,7 +58,7 @@ struct SideMenu: View {
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             openURL(URL(string: "https://pphamster.com/contactus")!)
-                            ignore = true
+                            clickable = true
                         })
                         .padding(.leading)
                         .padding(.top)
@@ -70,7 +71,7 @@ struct SideMenu: View {
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             openURL(URL(string: "https://www.pphamster.com")!)
-                            ignore = true
+                            clickable = true
                         })
                         .padding(.leading)
                         .padding(.top)
@@ -83,7 +84,7 @@ struct SideMenu: View {
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             openURL(URL(string: "https://www.pphamster.com")!)
-                            ignore = true
+                            clickable = true
                         })
                         .padding(.leading)
                         .padding(.top)
@@ -95,7 +96,7 @@ struct SideMenu: View {
                 }
             )
             .onAppear() {
-                ignore = false
+                clickable = false
             }
         
     }
@@ -104,6 +105,6 @@ struct SideMenu: View {
 }
 
 #Preview {
-    SideMenu(ignore: .constant(false), showSideBar: .constant(true))
+    SideMenu(clickable: .constant(false), showSideBar: .constant(true))
 }
 

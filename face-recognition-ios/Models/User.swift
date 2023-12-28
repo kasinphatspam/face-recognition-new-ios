@@ -18,6 +18,8 @@ struct User: Codable, Identifiable {
     let email: String
     let gender: String?
     let image: String?
+    let dob: String?
+    let personalId: String?
     let organization: Organization?
     let role: Role?
     

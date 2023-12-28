@@ -17,7 +17,9 @@ struct EmployeeLayout: View {
     
     var body: some View {
         NavigationLink {
-            
+            Text("Hello world")
+                .toolbarRole(.editor)
+
         } label: {
             HStack {
                 SmallCircleImage(image: user.image ?? "")
@@ -37,10 +39,8 @@ struct EmployeeLayout: View {
                 if user.role?.name == "administrator" {
                     Image(systemName: "star.square.fill")
                         .frame(width: 36, height: 36)
-                        .padding(.trailing)
                         .imageScale(.large)
                         .foregroundColor(.blue)
-                    
                 }
                 
             }
@@ -53,6 +53,6 @@ struct EmployeeLayout: View {
 }
 
 #Preview {
-    EmployeeLayout(user: User(id: 1, firstname: "Kasinphat", lastname: "Ketchom", email: "kasinphat@gmail.com", gender: nil, image: nil, organization: nil, role: nil))
+    EmployeeLayout(user: User(id: 1, firstname: "Kasinphat", lastname: "Ketchom", email: "kasinphat@gmail.com", gender: nil, image: nil, dob: nil, personalId: nil, organization: nil, role: nil))
 }
 

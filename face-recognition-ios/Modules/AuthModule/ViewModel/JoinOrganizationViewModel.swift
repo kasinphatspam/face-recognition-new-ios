@@ -15,7 +15,7 @@ class JoinOrganizationViewModel: ObservableObject {
 
     func join(passcode: String) async throws {
         
-        try await organizationService.join(passcode: passcode, completion: { error, status in
+        try await organizationService.join(code: passcode, completion: { error, status in
             
             if error != nil {
                 self.signal.value = Signals(command: "JOIN_ORGANIZATION_FAILURE")

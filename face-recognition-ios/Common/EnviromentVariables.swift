@@ -21,5 +21,6 @@ struct EnviromentVariable {
     // Authentication Session
     static let service: String = "com.faceprove.app.auth"
     static let account: String = "faceprove"
+    static let url: String = protocal + "://" + ip
 }
 

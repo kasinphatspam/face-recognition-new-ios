@@ -92,7 +92,6 @@ struct OtherInformationView: View {
 struct CustomerDetailView: View {
     
     @Environment(\.presentationMode) var presentationMode
-    @StateObject var viewModel: CustomerDetailViewModel = CustomerDetailViewModel()
     var contact: Contact?
     
     init(contact: Contact?) {
@@ -104,7 +103,7 @@ struct CustomerDetailView: View {
         ScrollView(showsIndicators: false) {
             VStack {
                 
-                LargeProfileCircleImage(image: "mahiru")
+                LargeProfileCircleImage(image: contact?.image ?? "")
                     .padding(.top)
                 
                 Text("\(contact?.firstname ?? "") \(contact?.lastname ?? "")").bold()

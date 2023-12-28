@@ -16,12 +16,12 @@ struct DashboardView: View {
         ScrollView(showsIndicators: false) {
             VStack {
                 SearchBar()
-                Subtitle(title: "Enterprise Details")
+                Subtitle(title: "Organization Details")
                 OrganizationDetails()
                 Subtitle(title: "Services")
                 ServicesMenu(visibility: $visibility)
-                Subtitle(title: "Weekly Report")
-                WeeklyReport()
+//                Subtitle(title: "Weekly Report")
+//                WeeklyReport()
                 Spacer()
             }
         }
@@ -37,18 +37,19 @@ struct DashboardView: View {
                 }
             }
             
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    
-                } label: {
-                    Image(uiImage: UIImage(named: "notify")!).padding(.trailing, 8)
-                }
-            }
+//            ToolbarItem(placement: .navigationBarTrailing) {
+//                NavigationLink {
+//                    NotifyView().toolbarRole(.editor)
+//
+//                } label: {
+//                    Image(uiImage: UIImage(named: "notify")!).padding(.trailing, 8)
+//                }
+//            }
         }
         .toolbar(visibility, for: .tabBar)
     }
 }
 
 #Preview {
-    DashboardView(visibility: .constant(.visible), showSideBar: .constant(true))
+    DashboardView(visibility: .constant(.visible), showSideBar: .constant(false))
 }

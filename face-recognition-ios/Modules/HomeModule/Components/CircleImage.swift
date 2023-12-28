@@ -15,7 +15,7 @@ struct SmallCircleImage: View {
         self.url = image
     }
     var body: some View {
-        AsyncImage(url: URL(string: url)
+        AsyncImageHack(url: URL(string: url)
         ) {
             phase in
                 switch phase {
@@ -29,13 +29,17 @@ struct SmallCircleImage: View {
                         .clipped()
                         .clipShape(Circle())
                         .frame(width: 32, height: 32)
-                case .failure:
-                    Image(uiImage: UIImage(named: "default")!)
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .clipShape(Circle())
-                        .frame(width: 32, height: 32)
+                case .failure(let error):
+                    if error.localizedDescription == "cancelled" {
+                        SmallCircleImage(image: url)
+                    } else {
+                        Image(uiImage: UIImage(named: "default")!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .clipShape(Circle())
+                            .frame(width: 32, height: 32)
+                    }
                 @unknown default:
                     // Since the AsyncImagePhase enum isn't frozen,
                     // we need to add this currently unused fallback
@@ -55,7 +59,7 @@ struct CircleImage: View {
         self.url = image
     }
     var body: some View {
-        AsyncImage(url: URL(string: url)
+        AsyncImageHack(url: URL(string: url)
         ) {
             phase in
                 switch phase {
@@ -69,13 +73,17 @@ struct CircleImage: View {
                         .clipped()
                         .clipShape(Circle())
                         .frame(width: 36, height: 36)
-                case .failure:
-                    Image(uiImage: UIImage(named: "default")!)
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .clipShape(Circle())
-                        .frame(width: 36, height: 36)
+                case .failure(let error):
+                    if error.localizedDescription == "cancelled" {
+                        CircleImage(image: url)
+                    } else {
+                        Image(uiImage: UIImage(named: "default")!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .clipShape(Circle())
+                            .frame(width: 36, height: 36)
+                    }
                 @unknown default:
                     // Since the AsyncImagePhase enum isn't frozen,
                     // we need to add this currently unused fallback
@@ -95,7 +103,7 @@ struct ProfileCircleImage: View {
         self.url = image
     }
     var body: some View {
-        AsyncImage(url: URL(string: url)
+        AsyncImageHack(url: URL(string: url)
         ) {
             phase in
                 switch phase {
@@ -109,13 +117,17 @@ struct ProfileCircleImage: View {
                         .clipped()
                         .clipShape(Circle())
                         .frame(width: 40, height: 40)
-                case .failure:
-                    Image(uiImage: UIImage(named: "default")!)
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .clipShape(Circle())
-                        .frame(width: 40, height: 40)
+                case .failure(let error):
+                    if error.localizedDescription == "cancelled" {
+                        ProfileCircleImage(image: url)
+                    } else {
+                        Image(uiImage: UIImage(named: "default")!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .clipShape(Circle())
+                            .frame(width: 40, height: 40)
+                    }
                 @unknown default:
                     // Since the AsyncImagePhase enum isn't frozen,
                     // we need to add this currently unused fallback
@@ -135,7 +147,7 @@ struct LargeProfileCircleImage: View {
         self.url = image
     }
     var body: some View {
-        AsyncImage(url: URL(string: url)
+        AsyncImageHack(url: URL(string: url)
         ) {
             phase in
                 switch phase {
@@ -149,13 +161,17 @@ struct LargeProfileCircleImage: View {
                         .clipped()
                         .clipShape(Circle())
                         .frame(width: 120, height: 120)
-                case .failure:
-                    Image(uiImage: UIImage(named: "default")!)
-                        .resizable()
-                        .scaledToFill()
-                        .clipped()
-                        .clipShape(Circle())
-                        .frame(width: 120, height: 120)
+                case .failure(let error):
+                    if error.localizedDescription == "cancelled" {
+                        LargeProfileCircleImage(image: url)
+                    } else {
+                        Image(uiImage: UIImage(named: "default")!)
+                            .resizable()
+                            .scaledToFill()
+                            .clipped()
+                            .clipShape(Circle())
+                            .frame(width: 120, height: 120)
+                    }
                 @unknown default:
                     // Since the AsyncImagePhase enum isn't frozen,
                     // we need to add this currently unused fallback
@@ -163,6 +179,25 @@ struct LargeProfileCircleImage: View {
                     // in the future:
                     EmptyView()
                 }
+        }
+    }
+}
+
+struct AsyncImageHack<Content> : View where Content : View {
+
+    let url: URL?
+    @ViewBuilder let content: (AsyncImagePhase) -> Content
+
+    @State private var currentUrl: URL?
+    
+    var body: some View {
+        AsyncImage(url: currentUrl, content: content)
+        .onAppear {
+            if currentUrl == nil {
+                DispatchQueue.main.async {
+                    currentUrl = url
+                }
+            }
         }
     }
 }

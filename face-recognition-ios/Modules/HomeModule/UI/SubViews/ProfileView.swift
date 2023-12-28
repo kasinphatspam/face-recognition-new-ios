@@ -22,21 +22,26 @@ struct ProfileView: View {
                 Line()
                 Subtitle(title: "Personal Information")
                 PersonalInfo()
+                    .padding(.bottom, 8)
                 Line()
-                Subtitle(title: "Enterprise Information")
+                Subtitle(title: "Organization Information")
                 OrganizationInfo()
                 
                 NavigationLink {
-                   DetectorCameraView()
+                    ManageOrganizationView(shouldPopToRootView: $shouldPopToRootView).toolbarRole(.editor)
                 } label: {
-                   Button2(text: "Manage")
+                    Button2(text: "Manage")
                 }
                .padding(.top, 8)
+               .padding(.bottom, 8)
                 
-                Line()
-                Setting()
+//                Line()
+//                Setting()
                 Line()
                 AccountCenter(shouldPopToRootView: $shouldPopToRootView)
+                    .padding(.bottom, 8)
+                
+                Line()
                 
                 Spacer()
             }

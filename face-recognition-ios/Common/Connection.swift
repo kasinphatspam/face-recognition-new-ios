@@ -9,150 +9,67 @@ import Foundation
 
 class Connection {
     
-    func gets(from: String, header: [String: String]?, completion: @escaping ((Error?, Bool, Data?) -> Void)) async throws {
-        let url = URL(string: from)!
-        
-        // create http request, header configuration and payload
-        var request = URLRequest(url: url)
+    private var request: URLRequest
+    
+    init(url: String) {
+        request = URLRequest(url: URL(string: url)!)
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(EnviromentVariable.accessKey)", forHTTPHeaderField:"access-key")
-        // specific (isOptional)
-        if header != nil {
-            header?.forEach({ (key: String, value: String) in
-                addHeader(field: key, value: value)
-            })
-        }
-        request.httpMethod = "GET"
-        
-        // retrive the response and call it back
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                completion(error, false , nil)
-                return
-            }
-            completion(nil, true, data)
-        }
-        task.resume()
-        
-        func addHeader(field: String, value: String) {
-            request.addValue(value, forHTTPHeaderField: field)
+        request.addValue("\(EnviromentVariable.accessKey)", forHTTPHeaderField: "access-key")
+    }
+    
+    private func addHeaders(_ headers: [String: String]?) {
+        headers?.forEach { key, value in
+            request.addValue(value, forHTTPHeaderField: key)
         }
     }
     
-    func posts(from: String, parameter: [String: Any]?, header: [String: String]?, completion: @escaping ((Error?, Bool, Data?) -> Void)) async throws {
-        let url = URL(string: from)!
-        
-        // create http request, header configuration and payload
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(EnviromentVariable.accessKey)", forHTTPHeaderField:"access-key")
-        // specific (isOptional)
-        if header != nil {
-            header?.forEach({ (key: String, value: String) in
-                addHeader(field: key, value: value)
-            })
-        }
-        request.httpMethod = "POST"
-        
-        // convert the data from [String: Any] to JSON
-        if parameter != nil {
-            let body = try? JSONSerialization.data(withJSONObject: parameter!)
-            request.httpBody = body
-        }
-        
-        // retrive the response and call it back
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                completion(error, false , nil)
-                return
-            }
-            completion(nil, true, data)
-        }
-        task.resume()
-        
-        func addHeader(field: String, value: String) {
-            request.addValue(value, forHTTPHeaderField: field)
-        }
+    private func setHTTPMethod(_ method: String) {
+        request.httpMethod = method
     }
     
-    func puts(from: String, parameter: [String: Any]?, header: [String: String]?, completion: @escaping ((Error?, Bool, Data?) -> Void)) async throws {
-        let url = URL(string: from)!
-        
-        // create http request, header configuration and payload
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(EnviromentVariable.accessKey)", forHTTPHeaderField:"access-key")
-        // specific (isOptional)
-        if header != nil {
-            header?.forEach({ (key: String, value: String) in
-                addHeader(field: key, value: value)
-            })
-        }
-        request.httpMethod = "PUT"
-        
-        // convert the data from [String: Any] to JSON
-        if parameter != nil {
-            let body = try? JSONSerialization.data(withJSONObject: parameter!)
-            request.httpBody = body
-        }
-        
-        // retrive the response and call it back
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                completion(error, false , nil)
-                return
-            }
-            completion(nil, true, data)
-        }
-        task.resume()
-        
-        func addHeader(field: String, value: String) {
-            request.addValue(value, forHTTPHeaderField: field)
-        }
+    private func setHTTPBody(_ body: Data?) {
+        request.httpBody = body
     }
     
-    func delete(from: String, parameter: [String: Any]?, header: [String: String]?, completion: @escaping ((Error?, Bool, Data?) -> Void)) async throws {
-        let url = URL(string: from)!
-        
-        // create http request, header configuration and payload
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        request.addValue("\(EnviromentVariable.accessKey)", forHTTPHeaderField:"access-key")
-        // specific (isOptional)
-        if header != nil {
-            header?.forEach({ (key: String, value: String) in
-                addHeader(field: key, value: value)
-            })
-        }
-        request.httpMethod = "DELETE"
-        
-        // convert the data from [String: Any] to JSON
-        if parameter != nil {
-            let body = try? JSONSerialization.data(withJSONObject: parameter!)
-            request.httpBody = body
-        }
-        
-        // retrive the response and call it back
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    func executeRequest(completion: @escaping (Error?, Bool, Data?) -> Void) async throws {
+        let task = URLSession.shared.dataTask(with: request) { data, _, error in
             guard let data = data, error == nil else {
                 print(error?.localizedDescription ?? "No data")
-                completion(error, false , nil)
+                completion(error, false, nil)
                 return
             }
             completion(nil, true, data)
         }
         task.resume()
-        
-        func addHeader(field: String, value: String) {
-            request.addValue(value, forHTTPHeaderField: field)
-        }
+    }
+    
+    // MARK: - Public Methods
+    
+    func get(headers: [String: String]?, completion: @escaping (Error?, Bool, Data?) -> Void) async throws {
+        setHTTPMethod("GET")
+        addHeaders(headers)
+        try await executeRequest(completion: completion)
+    }
+    
+    func post(body: [String: Any]?, headers: [String: String]?, completion: @escaping (Error?, Bool, Data?) -> Void) async throws {
+        setHTTPMethod("POST")
+        addHeaders(headers)
+        setHTTPBody(try? JSONSerialization.data(withJSONObject: body as Any))
+        try await executeRequest(completion: completion)
+    }
+    
+    func put(body: [String: Any]?, headers: [String: String]?, completion: @escaping (Error?, Bool, Data?) -> Void) async throws {
+        setHTTPMethod("PUT")
+        addHeaders(headers)
+        setHTTPBody(try? JSONSerialization.data(withJSONObject: body as Any))
+        try await executeRequest(completion: completion)
+    }
+    
+    func delete(body: [String: Any]?, headers: [String: String]?, completion: @escaping (Error?, Bool, Data?) -> Void) async throws {
+        setHTTPMethod("DELETE")
+        addHeaders(headers)
+        setHTTPBody(try? JSONSerialization.data(withJSONObject: body as Any))
+        try await executeRequest(completion: completion)
     }
 }
-

@@ -33,8 +33,8 @@ struct CustomerView: View {
             }
             
             ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    
+                NavigationLink {
+                    AddCustomerView().toolbarRole(.editor)
                 } label: {
                     Image(uiImage: UIImage(named: "personadd")!).padding(.trailing, 8)
                 }
